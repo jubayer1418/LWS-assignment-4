@@ -2,13 +2,11 @@ import { useContext } from "react";
 import { NewsFeeds } from "../../context";
 
 function SingleLeftSide() {
-  const { isLoading, loading, error, data } = useContext(NewsFeeds);
+  const { dataL } = useContext(NewsFeeds);
 
-  if (isLoading) <p className="text-9xl text-red-500">{loading}</p>;
-  console.log(data);
   return (
     <>
-      {data?.articles.map((article) => (
+      {dataL?.map((article) => (
         <div
           key={article?.title}
           className="col-span-12 grid grid-cols-12 gap-4"

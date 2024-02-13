@@ -2,14 +2,15 @@ import { useContext } from "react";
 import { NewsFeeds } from "../../context";
 
 function SingleRIghtSideItem() {
-  const { isLoading, loading, error, data } = useContext(NewsFeeds);
+  const { isLoading, loading, error, dataR } = useContext(NewsFeeds);
 
   if (isLoading) {
     <p className="bg-red-700">{loading}</p>;
   }
+  console.log(dataR);
   return (
     <>
-      {data?.articles?.slice(10).map((article) => (
+      {dataR?.map((article) => (
         <div key={article.title} className="col-span-12 mb-6 md:col-span-8">
           <img className="w-full" src={article.urlToImage} alt="thumb" />
           {/* <!-- info --> */}

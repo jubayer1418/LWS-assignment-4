@@ -81,7 +81,10 @@ function Navbar({ handleSearch }) {
               required
             />
           )}
-          <img onClick={() => setShow(true)} src="./assets/icons/search.svg" />
+          <img
+            onClick={() => setShow((t) => !t)}
+            src="./assets/icons/search.svg"
+          />
         </div>
       </div>
 
